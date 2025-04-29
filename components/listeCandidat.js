@@ -2,26 +2,13 @@
 import { Table } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function ListeCandidat() {
   const route = useRouter();
 
-  const Candidats = [
-    {
-      key: 1,
-      nom: "ADELEKE",
-      prenom: "hanane",
-      email: "adeleke.hanan@gmail.com",
-      telephone: "0758246730",
-    },
-    {
-      key: 2,
-      nom: "Tiktok",
-      prenom: "reseau",
-      email: "titok@gmail.com",
-      telephone: "0454545474",
-    },
-  ];
+  const donnees = useSelector((state) => state.Candidats.liste);
 
   const Colonnes = [
     {
@@ -51,5 +38,5 @@ export default function ListeCandidat() {
     },
   ];
 
-  return <Table dataSource={Candidats} columns={Colonnes} pagination={false} />;
+  return <Table dataSource={donnees} columns={Colonnes} pagination={false} />;
 }

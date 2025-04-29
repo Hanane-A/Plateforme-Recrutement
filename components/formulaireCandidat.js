@@ -1,10 +1,22 @@
 "use client";
 
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Upload } from "antd";
+import { ajouterCandidat } from "../redux/candidatsSlice";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { UploadOutlined } from "@ant-design/icons";
+import { useState } from "react";
 
 export default function FormulaireCandidat() {
+  const dispatch = useDispatch();
+  const route = useRouter();
+  const [cvFile, setCvFile] = useState(null);
+
   const onFinish = (valeur) => {
-    console.log("Données candidat: ", valeur);
+    const newCandidat = { ...valeur };
+    dispatch(ajouterCandidat(newCandidat));
+    console.log("donnees: ", valeur);
+    route.push("/candidat/confirmation"); // redirection a la page de confirmation
   };
 
   return (
@@ -37,8 +49,34 @@ export default function FormulaireCandidat() {
         <Input />
       </Form.Item>
 
-      <Form.Item label="Téléphone" name="telephone">
+      <Form.Item
+        label="Téléphone"
+        name="telephone"
+        rules={[{ required: true, message: "Veuillez entrez votre prenom" }]}
+      >
         <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Description brève"
+        name="description"
+        rules={[{ required: true, message: "Ajoutez une description brève" }]}
+      >
+        <Input.TextArea rows={3} placeholder="Parlez un peu de vous..." />
+      </Form.Item>
+
+      <Form.Item label="CV (PDF ou DOC)" name="cv">
+        <Upload
+          beforeUpload={(file) => {
+            setCvFile(file); // enregistre le fichier sans l'uploader
+            return false; // empêche le téléversement auto
+          }}
+          accept=".pdf,.doc,.docx"
+          maxCount={1}
+        >
+          <Button icon={<UploadOutlined />}>Choisir un fichier</Button>
+          {cvFile && <p>Fichier sélectionné : {cvFile.name}</p>}
+        </Upload>
       </Form.Item>
 
       <Form.Item>

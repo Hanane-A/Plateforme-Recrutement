@@ -1,28 +1,13 @@
 "use client";
 import { Button, Descriptions, Card } from "antd";
 import { useParams, useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
 
 export default function DetailCandidat() {
   const { id } = useParams();
   const route = useRouter();
 
-  //Simulation des candidats
-  const Candidats = [
-    {
-      key: 1,
-      nom: "ADELEKE",
-      prenom: "hanane",
-      email: "adeleke.hanan@gmail.com",
-      telephone: "0758246730",
-    },
-    {
-      key: 2,
-      nom: "Tiktok",
-      prenom: "reseau",
-      email: "titok@gmail.com",
-      telephone: "0454545474",
-    },
-  ];
+  const Candidats = useSelector((state) => state.Candidats.liste);
 
   const candidat = Candidats.find((elm) => elm.key === parseInt(id));
   if (!candidat) {
@@ -38,15 +23,21 @@ export default function DetailCandidat() {
 
   return (
     <>
-      <Card title="Détail du Candidat" bordered>
+      <Card title="Détail du Candidat" variant="">
         <p>
           <strong>Nom :</strong> {candidat.nom}
+        </p>
+        <p>
+          <strong>Prenom :</strong> {candidat.prenom}
         </p>
         <p>
           <strong>Email :</strong> {candidat.email}
         </p>
         <p>
           <strong>Téléphone :</strong> {candidat.telephone}
+        </p>
+        <p>
+          <strong>Description :</strong> {candidat.description}
         </p>
         <Button
           type="primary"
