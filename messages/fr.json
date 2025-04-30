@@ -4,7 +4,8 @@
     "AllerFormulaire": "Aller au formulaire de candidature"
   },
   "Header": {
-    "titlePlatform": "Plateforme de recrutement"
+    "titlePlatform": "Recrutement",
+    "Footer": "Plateforme Recrutement"
   },
   "Confirmation": {
     "confirmTitle": "Candidat ajouté avec succès",

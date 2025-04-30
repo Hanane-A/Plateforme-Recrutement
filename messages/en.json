@@ -4,7 +4,8 @@
     "AllerFormulaire": "Go to the application form"
   },
   "Header": {
-    "titlePlatform": "Recruitment Platform"
+    "titlePlatform": "Recruitment",
+    "Footer": "Recruitment"
   },
   "Confirmation": {
     "confirmTitle": "Candidate added successfully",

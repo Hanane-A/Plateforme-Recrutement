@@ -14,17 +14,13 @@ export default function AppLayout({ children }) {
     <Provider store={store}>
       <ConfigProvider theme={theme}>
         <Layout style={{ minHeight: "100vh" }}>
-          <Header
-            style={{ background: "#001529", color: "#fff", padding: "0 24px" }}
-          >
-            <h1 style={{ color: "#fff", textAlign: "center" }}>
+          <Header style={{ background: "#001529", color: "#fff" }}>
+            <h1 style={{ color: "#fff", textAlign: "center", margin: "auto" }}>
               {t("titlePlatform")}
             </h1>
           </Header>
           <Content style={{ padding: "24px" }}>{children}</Content>
-          <Footer style={{ textAlign: "center" }}>
-            ©2025 Plateforme Recrutement
-          </Footer>
+          <Footer style={{ textAlign: "center" }}>©2025 {t("Footer")}</Footer>
         </Layout>
       </ConfigProvider>
     </Provider>

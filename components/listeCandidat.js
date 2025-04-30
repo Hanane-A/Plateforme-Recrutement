@@ -14,29 +14,36 @@ export default function ListeCandidat() {
 
   const Colonnes = [
     {
-      title: "Nom",
+      title: t("nom"),
       dataIndex: "nom",
       key: "nom",
     },
     {
-      title: "Prenom",
+      title: t("prenom"),
       dataIndex: "prenom",
       key: "prenom",
     },
     { title: "Email", dataIndex: "email", key: "email" },
     {
-      title: "Telephone",
+      title: t("telephone"),
       dataIndex: "telephone",
       key: "telephone",
     },
     {
-      title: " Action",
+      title: t("action"),
       key: "Action",
       render: (_, record) => (
-        <a onClick={() => route.push(`/recruteur/${record.key}`)}>detail</a>
+        <a onClick={() => route.push(`/recruteur/${record.key}`)}>Detail</a>
       ),
     },
   ];
 
-  return <Table dataSource={donnees} columns={Colonnes} pagination={false} />;
+  return (
+    <Table
+      dataSource={donnees}
+      columns={Colonnes}
+      pagination={false}
+      scroll={{ x: "max-content" }} // ✅ active le scroll horizontal si nécessaire //
+    />
+  );
 }

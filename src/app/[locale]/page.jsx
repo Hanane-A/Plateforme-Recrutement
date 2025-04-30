@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <>
       <h1>{t("Bienvenu")}</h1>
-      <Link href="/candidat">{t("AllerFormulaire")}</Link>
+      <Link href="/candidat" style={{ fontWeight: "bold", fontSize: "18px" }}>
+        {t("AllerFormulaire")}
+      </Link>
     </>
   );
 }

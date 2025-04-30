@@ -40,3 +40,14 @@ a {
     color-scheme: dark;
   }
 }
+
+.form-container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 80%;
+  }
+}

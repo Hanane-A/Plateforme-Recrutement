@@ -5,7 +5,7 @@ export default function Candidat() {
   const t = useTranslations("Formulaire");
   return (
     <>
-      <h1>{t("titreForm")}</h1>
+      <h1 style={{ textAlign: "center" }}>{t("titreForm")}</h1>
       <FormulaireCandidat />
     </>
   );
