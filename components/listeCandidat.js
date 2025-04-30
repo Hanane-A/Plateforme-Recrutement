@@ -12,6 +12,7 @@ export default function ListeCandidat() {
   const donnees = useSelector((state) => state.Candidats.liste);
   const t = useTranslations("Recruteur");
 
+  //les colonnes du composant Table
   const Colonnes = [
     {
       title: t("nom"),
@@ -43,7 +44,7 @@ export default function ListeCandidat() {
       dataSource={donnees}
       columns={Colonnes}
       pagination={false}
-      scroll={{ x: "max-content" }} // ✅ active le scroll horizontal si nécessaire //
+      scroll={{ x: "max-content" }} // active le scroll horizontal si nécessaire
     />
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+//separation du layout pour faciler l'usage des hoot coté client
+
 import { ConfigProvider, Layout } from "antd";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";

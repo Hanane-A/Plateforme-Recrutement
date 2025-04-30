@@ -8,11 +8,13 @@ import { UploadOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
+//Formulaire avec ant design
 export default function FormulaireCandidat() {
   const dispatch = useDispatch();
   const route = useRouter();
   const [cvFile, setCvFile] = useState(null);
 
+  //Fonction qui recupere les infos entre dans le formulaire et appel ajouterCandidat
   const onFinish = (valeur) => {
     const newCandidat = { ...valeur };
     dispatch(ajouterCandidat(newCandidat));
@@ -20,6 +22,7 @@ export default function FormulaireCandidat() {
     route.push("/candidat/confirmation"); // redirection a la page de confirmation
   };
 
+  //Hook pour appliquer la traduction
   const t = useTranslations("Formulaire");
 
   return (
@@ -76,6 +79,9 @@ export default function FormulaireCandidat() {
           <Input.TextArea rows={3} placeholder="Parlez un peu de vous..." />
         </Form.Item>
 
+        {
+          //similation de prise en compte du fichier CV
+        }
         <Form.Item label="CV (PDF ou DOC)" name="cv">
           <Upload
             beforeUpload={(file) => {

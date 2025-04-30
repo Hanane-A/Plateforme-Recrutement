@@ -20,7 +20,7 @@ Cette application est une plateforme web permettant aux candidats de soumettre l
 1. **Cloner le dépôt :**
 
 ```bash
-git clone https://github.com/Hanane-A/Plateforme-Recrutement.git
+git clone https://github.com/Hanane-A/Plateforme-Recrutement
 cd Plateforme-Recrutement
 ```
 
