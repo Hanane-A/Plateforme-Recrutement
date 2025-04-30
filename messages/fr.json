@@ -1,0 +1,36 @@
+{
+  "PageAccueil": {
+    "Bienvenu": "Bienvenue sur notre plateforme de recrutement",
+    "AllerFormulaire": "Aller au formulaire de candidature"
+  },
+  "Header": {
+    "titlePlatform": "Plateforme de recrutement"
+  },
+  "Confirmation": {
+    "confirmTitle": "Candidat ajouté avec succès",
+    "confirmRemerci": "Merci d'avoir soumis vos informations.",
+    "retourForm": "Retour au formulaire"
+  },
+  "Formulaire": {
+    "titreForm": "Formulaire de candidature",
+    "nom": "Nom",
+    "prenom": "Prénom",
+    "email": "Email",
+    "telephone": "Téléphone",
+    "description": "Description",
+    "envoyer": "envoyer",
+    "choisir": "Choisir un fichier"
+  },
+  "Recruteur": {
+    "titreListe": "Liste des candidats",
+    "nom": "Nom",
+    "prenom": "Prénom",
+    "email": "Email",
+    "telephone": "Téléphone",
+    "action": "Action",
+    "description": "Description",
+    "candidatIntrou": "Candidat introuvable",
+    "detail": "Détail du Candidat",
+    "retour": "Retour au liste"
+  }
+}

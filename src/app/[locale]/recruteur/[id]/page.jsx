@@ -1,11 +1,13 @@
 "use client";
 import { Button, Descriptions, Card } from "antd";
+import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 
 export default function DetailCandidat() {
   const { id } = useParams();
   const route = useRouter();
+  const t = useTranslations("Recruteur");
 
   const Candidats = useSelector((state) => state.Candidats.liste);
 
@@ -13,17 +15,15 @@ export default function DetailCandidat() {
   if (!candidat) {
     return (
       <>
-        <h1>Candidat introuvable</h1>
-        <Button onClick={() => route.push("/recruteur")}>
-          Retour au liste
-        </Button>
+        <h1>{t("candidatIntrou")}</h1>
+        <Button onClick={() => route.push("/recruteur")}>{t("retour")}</Button>
       </>
     );
   }
 
   return (
     <>
-      <Card title="Détail du Candidat" variant="">
+      <Card title={t("detail")} variant="">
         <p>
           <strong>Nom :</strong> {candidat.nom}
         </p>
@@ -44,7 +44,7 @@ export default function DetailCandidat() {
           onClick={() => route.push("/recruteur")}
           style={{ marginTop: 16 }}
         >
-          Retour à la liste
+          {t("retour")}
         </Button>
       </Card>
     </>

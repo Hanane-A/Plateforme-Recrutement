@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { UploadOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function FormulaireCandidat() {
   const dispatch = useDispatch();
@@ -19,24 +20,26 @@ export default function FormulaireCandidat() {
     route.push("/candidat/confirmation"); // redirection a la page de confirmation
   };
 
+  const t = useTranslations("Formulaire");
+
   return (
     <Form name="formulaireCandidat" layout="vertical" onFinish={onFinish}>
       <Form.Item
-        label="Nom"
+        label={t("nom")}
         name="nom"
         rules={[{ required: true, message: "Veuillez entrez votre nom" }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        label="prenom"
+        label={t("prenom")}
         name="prenom"
         rules={[{ required: true, message: "Veuillez entrez votre prenom" }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        label="Email"
+        label={t("email")}
         name="email"
         rules={[
           {
@@ -50,7 +53,7 @@ export default function FormulaireCandidat() {
       </Form.Item>
 
       <Form.Item
-        label="Téléphone"
+        label={t("telephone")}
         name="telephone"
         rules={[{ required: true, message: "Veuillez entrez votre prenom" }]}
       >
@@ -58,7 +61,7 @@ export default function FormulaireCandidat() {
       </Form.Item>
 
       <Form.Item
-        label="Description brève"
+        label={t("description")}
         name="description"
         rules={[{ required: true, message: "Ajoutez une description brève" }]}
       >
@@ -74,14 +77,14 @@ export default function FormulaireCandidat() {
           accept=".pdf,.doc,.docx"
           maxCount={1}
         >
-          <Button icon={<UploadOutlined />}>Choisir un fichier</Button>
+          <Button icon={<UploadOutlined />}>{t("choisir")}</Button>
           {cvFile && <p>Fichier sélectionné : {cvFile.name}</p>}
         </Upload>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit">
-          Envoyer
+          {t("envoyer")}
         </Button>
       </Form.Item>
     </Form>

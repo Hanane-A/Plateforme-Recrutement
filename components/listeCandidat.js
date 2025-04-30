@@ -1,5 +1,6 @@
 "use client";
 import { Table } from "antd";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -9,6 +10,7 @@ export default function ListeCandidat() {
   const route = useRouter();
 
   const donnees = useSelector((state) => state.Candidats.liste);
+  const t = useTranslations("Recruteur");
 
   const Colonnes = [
     {
@@ -31,9 +33,7 @@ export default function ListeCandidat() {
       title: " Action",
       key: "Action",
       render: (_, record) => (
-        <a onClick={() => route.push(`/recruteur/${record.key}`)}>
-          voir detail
-        </a>
+        <a onClick={() => route.push(`/recruteur/${record.key}`)}>detail</a>
       ),
     },
   ];
