@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plateforme de Recrutement
 
-## Getting Started
+Cette application est une plateforme web permettant aux candidats de soumettre leur profil, et aux recruteurs de consulter la liste des candidats et leurs détails.
 
-First, run the development server:
+---
+
+## 🚀 Technologies utilisées
+
+- **Next.js 14** (App Router)
+- **React**
+- **Redux Toolkit** (gestion d’état)
+- **Ant Design** (UI)
+- **Next-Intl** (traduction multilingue)
+- **JavaScript **
+
+---
+
+## 🛠️ Installation du projet
+
+1. **Cloner le dépôt :**
+
+```bash
+git clone https://github.com/Hanane-A/Plateforme-Recrutement
+cd Plateforme-Recrutement
+```
+
+2. **Installer les dépendances :**
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Lancer l’application en local
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Par défaut, l’application sera accessible à l’adresse :  
+**http://localhost:3000**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Structure des dossiers (simplifiée)
 
-## Learn More
+```
+/messages                       <- représentent les traductions disponibles par langue
+    fr.json
+    en.json
+/src
+    /app
+        /[locale]               <- gestion des langues (fr, en,)
+            /candidat           <- formulaire et confirmation
+            /recruteur          <- liste + détails candidats
+            layout.jsx          <- layout principal (multilingue, Redux, thème)
+            page.jsx            <- page d’accueil
+    /i18n
+        request.js
+        routing.js
+        navigation.js
+    middleware.js
+/redux
+  candidatsSlice.js       ← logique Redux
+  store.js                ← configuration Redux
+/theme
+  themeconfig.js          ← configuration Ant Design
+/public/locales           ← fichiers de traduction JSON (fr.json, en.json, ...)
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Configuration multilingue (i18n)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La configuration i18n se fait dans `next.config.mjs` :
 
-## Deploy on Vercel
+```js
+i18n: {
+  locales: ['fr', 'en'],
+  defaultLocale: 'fr',
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Les traductions sont placées dans :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+/public/locales/fr/common.json
+/public/locales/en/common.json
+```
+
+---
+
+## 📄 Fonctionnalités
+
+- Formulaire de candidature avec :
+  - Nom, prénom, email, téléphone
+  - Description personnelle
+  - Upload de CV (non stocké en base, simulé)
+- Liste des candidats avec lien vers les détails
+- Ajout dynamique de candidat via Redux
+- Interface adaptative (responsive)
+- Thème personnalisé avec Ant Design
+- Traduction français/anglais (Next-Intl)
+
+---
+
+## 🧑‍💻 Contributeurs
+
+- Hanane ADELEKE
+
+---
+
+## ✅ TODO (à compléter au fil du projet)
+
+- [ ] Stockage réel du fichier CV
+- [ ] Ajout d’un filtre/recherche sur la liste des candidats
+- [ ] Connexion à une base de données

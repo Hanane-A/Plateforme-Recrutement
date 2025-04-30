@@ -1,0 +1,37 @@
+{
+  "PageAccueil": {
+    "Bienvenu": "Welcome to our recruitment platform",
+    "AllerFormulaire": "Go to the application form"
+  },
+  "Header": {
+    "titlePlatform": "Recruitment",
+    "Footer": "Recruitment"
+  },
+  "Confirmation": {
+    "confirmTitle": "Candidate added successfully",
+    "confirmRemerci": "Thank you for submitting your information.",
+    "retourForm": "Back to the form"
+  },
+  "Formulaire": {
+    "titreForm": "Application Form",
+    "nom": "Last Name",
+    "prenom": "First Name",
+    "email": "Email",
+    "telephone": "Phone",
+    "description": "Description",
+    "envoyer": "Send",
+    "choisir": "Choose a file"
+  },
+  "Recruteur": {
+    "titreListe": "Candidate List",
+    "nom": "Last Name",
+    "prenom": "First Name",
+    "email": "Email",
+    "telephone": "Phone",
+    "action": "Action",
+    "description": "Description",
+    "candidatIntrou": "Candidate not found",
+    "detail": "Candidate Details",
+    "retour": "Back to list"
+  }
+}
